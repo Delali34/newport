@@ -3,6 +3,7 @@ import SectionHeader from "./SectionHeader";
 import type { Testimonial } from "../lib/types";
 
 export default function Testimonials({ items }: { items: Testimonial[] }) {
+  if (items.length === 0) return null;
   return (
     <section id="testimonials">
       <div className="container">

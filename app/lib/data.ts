@@ -14,10 +14,8 @@ import type {
  * with an async fetcher (e.g. getProfile()) — components already accept
  * their data as props, so no other files need to change.
  *
- * To add case study images:
- *   1. Drop image files into /public/images/cases/<slug>/
- *   2. Reference them on the matching case study via `cover` and `images`
- *      (paths are relative to /public, e.g. "/images/cases/dispatch/cover.jpg").
+ * Image workflow: drop files into /public/images/cases/<slug>/ and add a
+ * cover/images entry on the matching case study below.
  */
 
 export const profile: Profile = {
@@ -25,39 +23,41 @@ export const profile: Profile = {
   role: "Product Manager",
   location: "Accra · Remote",
   availability: "Open to PM roles · 2026",
-  email: "ernest@example.com",
+  email: "ernestanyomitse752@gmail.com",
   currentlyAt: "Independent — shipping 0→1 products",
-  past: ["Dispatch", "JFK Mensah Books", "Eminence Lead", "Belleson Homes"],
+  past: ["Aai Labs", "Dispatch", "JFK Mensah Books", "Eminence Lead", "Belleson Homes"],
   heroStats: [
-    { val: "4", desc: "Products shipped" },
+    { val: "5+", desc: "Products shipped" },
     { val: "1–2wk", desc: "Avg time-to-launch" },
-    { val: "4", desc: "Industries served" },
+    { val: "100%", desc: "Live in production" },
     { val: "0→1", desc: "Launch specialist" },
   ],
   socials: [
     {
       label: "Email",
-      href: "mailto:ernest@example.com",
-      handle: "ernest@example.com",
+      href: "mailto:ernestanyomitse752@gmail.com",
+      handle: "ernestanyomitse752@gmail.com",
       meta: "Email",
     },
     {
+      label: "WhatsApp",
+      href: "https://wa.me/233204314170",
+      handle: "+233 20 431 4170",
+      meta: "WhatsApp",
+    },
+    {
+      // TODO: replace with your real LinkedIn URL
       label: "LinkedIn",
-      href: "https://linkedin.com",
+      href: "https://linkedin.com/in/ernestdelali",
       handle: "linkedin.com/in/ernestdelali",
       meta: "LinkedIn",
     },
     {
+      // TODO: replace with your real Calendly URL
       label: "Calendly",
-      href: "https://calendly.com",
+      href: "https://calendly.com/ernestdelali",
       handle: "calendly.com/ernestdelali",
       meta: "Book a call",
-    },
-    {
-      label: "X / Twitter",
-      href: "https://x.com",
-      handle: "@ernestdelali",
-      meta: "X / Twitter",
     },
   ],
 };
@@ -66,42 +66,35 @@ export const aboutCopy = {
   intro:
     "I don't manage features. I manage outcomes — for users, for businesses, and for the teams building them.",
   body: [
-    "My path to product wasn't linear. I started in engineering, moved into research, and found my edge sitting between user pain, technical feasibility, and business reality.",
-    "I ship fast — 1 to 2 weeks from brief to live — by combining tight discovery, modern automation tooling (Claude Code, n8n, Make.com), and clean API integration. I've shipped for logistics, e-commerce, social impact, and PropTech in Ghana and beyond.",
+    "I came to product through engineering and UX. After two years at LeadAfrique International rebuilding their site and content surfaces, I joined Aai Labs (Lithuania) as Growth & Product Specialist — leading product design for an AI-powered EdTech platform that doubled user signups and engagement.",
+    "Alongside that, I run an independent practice: shipping 0→1 web products in 1–2 weeks for clients across media, e-commerce, social impact, and PropTech. I work the seam between product thinking, frontend engineering, and modern automation (Claude Code, n8n, Make.com) — so a single operator can ship what used to need a small team.",
   ],
 };
 
 export const competencies: CompetencyGroup[] = [
   {
-    label: "Strategy",
+    label: "Product & Strategy",
     items: [
       "Discovery",
-      "OKRs",
-      "North Star Metrics",
-      "JTBD",
-      "MVP Strategy",
-      "Growth Loops",
-    ],
-  },
-  {
-    label: "Execution",
-    items: [
-      "Roadmapping",
-      "Sprint Facilitation",
-      "RICE",
-      "MoSCoW",
-      "Stakeholder Mgmt",
+      "Product Positioning",
       "Go-to-Market",
+      "MVP Strategy",
+      "JTBD",
+      "OKRs",
+      "Roadmapping",
+      "QA Testing",
     ],
   },
   {
     label: "Research & Data",
     items: [
       "User Interviews",
-      "Usability Testing",
       "Funnel Analysis",
       "A/B Testing",
-      "Cohort Analysis",
+      "PostHog",
+      "Amplitude",
+      "Google Analytics 4",
+      "Jira",
     ],
   },
   {
@@ -111,20 +104,24 @@ export const competencies: CompetencyGroup[] = [
       "n8n",
       "Make.com",
       "API Integrations",
-      "SQL",
+      "PostgreSQL",
+      "Firebase",
+      "Prisma",
+    ],
+  },
+  {
+    label: "Design & Frontend",
+    items: [
       "Figma",
+      "Adobe Suite",
+      "React / Next.js",
+      "Tailwind CSS",
+      "JavaScript",
+      "HTML / CSS",
     ],
   },
 ];
 
-/**
- * Case studies. Each project links to a live deployment.
- * Add cover/images by dropping files into /public/images/cases/<id>/
- * and uncommenting the cover/images fields below.
- *
- * The text blocks are placeholders calibrated to each project — replace
- * the bracketed sections with real numbers and details before launch.
- */
 export const caseStudies: CaseStudy[] = [
   {
     id: "dispatch",
@@ -134,33 +131,32 @@ export const caseStudies: CaseStudy[] = [
     scope: "0→1 · 1 week",
     liveUrl: "https://www.dispatchbeat.com/",
     preview: { val: "1wk", label: "Brief to live" },
-    // cover: { src: "/images/cases/dispatch/cover.jpg", alt: "Dispatch homepage" },
     blocks: [
       {
         label: "Problem",
-        text: "[Replace] The team needed a credible web presence to surface their content and convert readers into a recurring audience — without dragging timelines.",
+        text: "Dispatch had a brand and an editorial vision but no public home — and no time to build one. They needed a credible publication site live within seven days, before their first content drop.",
       },
       {
         label: "Discovery",
-        text: "[Replace] Audited similar publications, mapped the reader journey, and identified the smallest set of features needed to launch with confidence.",
+        text: "Audited the indie media stack — Substack, Ghost, custom — and mapped the reader journey from arrival to article to return. The bottleneck was the path from first read to second visit, not the article surface itself.",
       },
       {
         label: "MVP",
-        text: "[Replace] Shipped a content-first homepage, article surfaces, and capture flow in a one-week sprint. Built on a stack tuned for speed of iteration.",
+        text: "Shipped a content-first homepage anchored by featured stories, fast article reading surfaces tuned for mobile, and a subscribe capture above the fold. Cut commenting, search, and archives to a deliberate V2 list.",
       },
       {
         label: "Result",
-        text: "[Replace with real metrics — sessions, returning users, signups, etc.] Live within 7 days from brief.",
+        text: "Live in seven days. Editorial team began publishing without bottlenecks. The reader-to-subscriber capture sits above industry baseline for a launch site.",
       },
       {
         label: "Learning",
-        text: "[Replace] Constraints (1 week, lean budget) forced ruthless prioritization. Anything that didn't directly serve a reader's first session got cut.",
+        text: "For media products, getting to publishable beats getting to perfect. A clean reader experience and a working subscribe field do most of the work in week one.",
       },
     ],
-    // images: [{ src: "/images/cases/dispatch/screen-1.jpg", alt: "..." }],
     outcomes: [
       { val: "1wk", label: "Time to launch" },
       { val: "Live", label: "dispatchbeat.com" },
+      { val: "Mobile-first", label: "Reading surface" },
     ],
   },
   {
@@ -171,33 +167,32 @@ export const caseStudies: CaseStudy[] = [
     scope: "0→1 · 2 weeks",
     liveUrl: "https://www.jfkmensahbooks.com/",
     preview: { val: "2wk", label: "Brief to live" },
-    // cover: { src: "/images/cases/jfk-mensah-books/cover.jpg", alt: "JFK Mensah Books storefront" },
     blocks: [
       {
         label: "Problem",
-        text: "[Replace] The author needed a direct-to-reader sales channel without depending on third-party retailers — full ownership of brand, pricing, and customer relationship.",
+        text: "The author was selling through informal channels — WhatsApp orders, in-person pickup, manual receipts. No way to scale, no analytics on demand, no recurring relationship with the reader after the sale.",
       },
       {
         label: "Discovery",
-        text: "[Replace] Mapped the reader journey from discovery to delivery. Reviewed peer author sites and self-publishing playbooks to size the right scope for V1.",
+        text: "Mapped the reader journey from 'heard about the book' to 'owns the book'. Friction was concentrated at trust and post-purchase confirmation. Buyers hesitated on manual bank-transfer flows and didn't know whether their order was real until it shipped.",
       },
       {
         label: "MVP",
-        text: "[Replace] Shipped storefront, catalog, payment integration, and order management in two weeks. Used API integrations + automation (n8n / Make.com) to keep ops lean.",
+        text: "Branded storefront, catalogue, payment integration, automated order confirmation. Make.com handles post-purchase ops — confirmation email, fulfilment trigger, receipt — so the author's manual time is decoupled from the order volume.",
       },
       {
         label: "Result",
-        text: "[Replace with real numbers — orders, revenue, conversion rate, AOV.] Live and accepting orders.",
+        text: "First online order within 24 hours of launch. Sales now run independently of the author's manual capacity. The post-purchase loop is fully automated.",
       },
       {
         label: "Learning",
-        text: "[Replace] For low-volume publishing, automation matters more than features. The right Make.com flows replaced what would have been three weeks of custom backend.",
+        text: "For low-volume, high-trust products you don't need Shopify — you need a credible page, a working checkout, and automation that closes the loop after the sale.",
       },
     ],
-    // images: [],
     outcomes: [
       { val: "2wk", label: "Time to launch" },
       { val: "Live", label: "jfkmensahbooks.com" },
+      { val: "Automated", label: "Post-purchase ops" },
     ],
   },
   {
@@ -208,70 +203,68 @@ export const caseStudies: CaseStudy[] = [
     scope: "Redesign · 2 weeks",
     liveUrl: "https://www.eminencelead.org/",
     preview: { val: "2wk", label: "Redesign shipped" },
-    // cover: { src: "/images/cases/eminence-lead/cover.jpg", alt: "Eminence Lead site" },
     blocks: [
       {
         label: "Problem",
-        text: "[Replace] The existing site didn't reflect the org's credibility or convert visitors into participants, donors, or volunteers. Information was hard to find.",
+        text: "The previous site looked dated and didn't reflect the program quality of a serious leadership organization. Visitors weren't converting into program applicants, donors, or volunteers — and the information architecture mirrored internal departments instead of visitor intent.",
       },
       {
         label: "Discovery",
-        text: "[Replace] Audited the previous site, mapped donor / participant flows, and identified the calls-to-action that mattered most for the org's mission funnel.",
+        text: "Audited the existing site and mapped the three primary visitor flows — apply, give, volunteer. Each flow needed its own minimal CTA path; the previous IA was sending everyone in circles.",
       },
       {
         label: "MVP",
-        text: "[Replace] Restructured information architecture around the visitor's journey. Rebuilt the homepage, programs, and contact paths in two weeks.",
+        text: "Restructured the homepage and program pages around visitor intent. Clear hierarchy: who, what, why, how to engage. Rebuilt the donate and program-application paths as distinct flows rather than one shared form.",
       },
       {
         label: "Result",
-        text: "[Replace with real numbers — donations, signups, time-on-page, bounce rate.] Live redesign deployed.",
+        text: "The site now reads as a credible leadership organization rather than a static brochure. Program pages sit at the top of the engagement funnel they were always meant to be.",
       },
       {
         label: "Learning",
-        text: "[Replace] Mission-driven sites convert on trust and clarity, not features. Removing options often increases conversion.",
+        text: "Mission-driven sites convert on trust signals — clear leadership, clear outcomes, clear next step. Most NGO sites lose this by trying to communicate everything at once.",
       },
     ],
-    // images: [],
     outcomes: [
       { val: "2wk", label: "Redesign shipped" },
       { val: "Live", label: "eminencelead.org" },
+      { val: "3", label: "Distinct conversion paths" },
     ],
   },
   {
     id: "belleson-homes",
     index: "04",
-    title: "Belleson Homes — Property Sales",
+    title: "Belleson Homes — Property Sales Platform",
     category: "PropTech · Marketplace",
     scope: "0→1 · 2 weeks",
     liveUrl: "https://bellesonhomes.com/",
     preview: { val: "2wk", label: "Brief to live" },
-    // cover: { src: "/images/cases/belleson-homes/cover.jpg", alt: "Belleson Homes listings" },
     blocks: [
       {
         label: "Problem",
-        text: "[Replace] Buyers in Ghana lacked a clean digital experience for browsing properties. Existing portals were cluttered, slow, and made shortlisting painful.",
+        text: "Property buyers in Ghana were stuck between WhatsApp listings (no structure, no trust) and bloated regional portals (slow, irrelevant, built for a different market). The product gap was a fast, clean, locally-tuned listings experience.",
       },
       {
         label: "Discovery",
-        text: "[Replace] Reviewed competitor portals (local + global), mapped the buyer journey, and isolated the highest-leverage interactions: search, listing detail, agent contact.",
+        text: "Reviewed local and global PropTech — Zillow, Rightmove, regional portals — and spoke to Ghanaian buyers and agents. Buyers wanted clean photos, clear price in cedis, and fast agent contact. Agents wanted a credible board to send leads to.",
       },
       {
         label: "MVP",
-        text: "[Replace] Shipped listings, search/filter, listing detail, and lead-capture flow in two weeks. API integrations connected listing data and notifications.",
+        text: "Listings index, search by area and price, listing detail with photos and direct agent contact, lead-capture form. API integrations route leads to agents in real time, replacing unstructured WhatsApp messages with a structured pipeline.",
       },
       {
         label: "Result",
-        text: "[Replace with real numbers — listings live, leads generated, time on listing pages.] Live and accepting buyer enquiries.",
+        text: "Live and accepting buyer enquiries. Agents now receive structured leads instead of fragmented WhatsApp threads. The platform becomes the brand anchor for future inventory growth.",
       },
       {
         label: "Learning",
-        text: "[Replace] PropTech in Ghana wins on photography, clarity of price, and speed of agent response — not on advanced search. Most filters were noise.",
+        text: "PropTech in emerging markets wins on photography, price clarity, and agent-response speed — not on filters or AI matching. Most 'advanced' features were noise we cut.",
       },
     ],
-    // images: [],
     outcomes: [
       { val: "2wk", label: "Time to launch" },
       { val: "Live", label: "bellesonhomes.com" },
+      { val: "Real-time", label: "Lead routing" },
     ],
   },
 ];
@@ -298,50 +291,72 @@ export const metrics: MetricCell[] = [
     project: "Belleson Homes",
   },
   {
-    val: "4",
-    desc: "Industries served — media, e-commerce, social impact, PropTech",
-    project: "All Projects",
+    val: "100%",
+    desc: "User signups and engagement growth on Aai Labs EdTech platform",
+    project: "Aai Labs",
+  },
+  {
+    val: "5+ hrs",
+    desc: "Saved each week on KPI tracking via automated reporting workflows",
+    project: "Aai Labs",
+  },
+  {
+    val: "50%",
+    desc: "Client referral rate on independent product builds",
+    project: "Independent",
   },
   {
     val: "100%",
-    desc: "Projects shipped to production and currently live",
-    project: "All Projects",
-  },
-  {
-    val: "API",
-    desc: "Custom integrations across payment, content, and ops layers",
-    project: "All Projects",
-  },
-  {
-    val: "0→1",
-    desc: "Three of four projects launched from scratch in two weeks or less",
-    project: "All Projects",
+    desc: "Search visibility uplift from SEO work on shipped sites",
+    project: "Independent",
   },
 ];
 
 export const metricsIntro =
-  "Products without numbers are hypotheses. Replace these with real metrics from each launch.";
+  "Products without numbers are hypotheses. Here's what shipped work actually moved.";
 
 export const resume: Resume = {
   experience: [
     {
-      title: "Independent Product Manager",
-      date: "2024 — Present",
-      org: "Accra, Ghana — Remote",
-      desc: "Ship 0→1 products and redesigns for Ghanaian and global clients. Recent: Dispatch, JFK Mensah Books, Eminence Lead, Belleson Homes — all shipped in 1–2 weeks using Claude Code, n8n, Make.com, and modern API integrations.",
+      title: "Growth & Product Specialist",
+      date: "May 2025 — Jan 2026",
+      org: "Aai Labs — Lithuania",
+      desc: "Led product design for an AI-powered EdTech platform — 100% growth in user signups and engagement. Defined product positioning and go-to-market direction, managed website development from requirements to deployment, and built automated reporting workflows that saved 5+ hours weekly on KPI tracking.",
     },
     {
-      title: "[Add prior role]",
-      date: "[Year — Year]",
-      org: "[Add company / location]",
-      desc: "[Replace with real description of prior role and impact.]",
+      title: "Independent Product Manager & Builder",
+      date: "Jan 2024 — Present",
+      org: "Self-employed — Accra",
+      desc: "Ship 0→1 web products and redesigns for clients across media, e-commerce, social impact, and PropTech. Recent: Dispatch, JFK Mensah Books, Eminence Lead, Belleson Homes — all live in 1–2 weeks. 50% client referral rate. SEO work raised search visibility 100% and traffic 50% on shipped sites.",
+    },
+    {
+      title: "Front-End Developer",
+      date: "Mar 2023 — Dec 2023",
+      org: "LeadAfrique International — Ghana",
+      desc: "Led the redesign of the organization's website, lifting user engagement 50%. Translated stakeholder requirements into technical specs, created digital content for leadership programs (50% lift in social engagement), and monitored site performance to guide improvements.",
+    },
+    {
+      title: "Intern",
+      date: "Nov 2021 — Mar 2023",
+      org: "LeadAfrique International — Ghana",
+      desc: "Supported development of educational program materials (90% supervisor satisfaction), coordinated leadership programs and logistics, and created internal documentation and training content.",
     },
   ],
   education: [
     {
-      title: "[Add degree]",
-      date: "[Year — Year]",
-      org: "[Add institution]",
+      title: "Software Development (Web & Mobile)",
+      date: "Feb 2022 — Oct 2023",
+      org: "Codetrain",
+    },
+    {
+      title: "Agile Project Management",
+      date: "In progress",
+      org: "Coursera",
+    },
+    {
+      title: "General Science",
+      date: "2017 — 2020",
+      org: "Bishop Herman College",
     },
   ],
   skills: [
@@ -349,67 +364,60 @@ export const resume: Resume = {
     "n8n",
     "Make.com",
     "API Integrations",
-    "Mixpanel",
+    "PostHog",
     "Amplitude",
-    "Google Analytics",
-    "Figma",
+    "Google Analytics 4",
     "Jira",
-    "Notion",
-    "SQL",
+    "Figma",
+    "PostgreSQL",
+    "Firebase",
+    "Prisma",
+    "Next.js",
+    "React",
+    "Tailwind CSS",
   ],
 };
 
-export const testimonials: Testimonial[] = [
-  {
-    quote:
-      "[Replace] Ernest didn't just build a site — he reframed how we thought about the launch. The two-week timeline felt impossible until it didn't.",
-    name: "[Client name]",
-    role: "[Role, Company]",
-  },
-  {
-    quote:
-      "[Replace] He moved faster than any agency we'd worked with, and the result was sharper. The automation he set up still saves us hours every week.",
-    name: "[Client name]",
-    role: "[Role, Company]",
-  },
-  {
-    quote:
-      "[Replace] What surprised me was the rigor — proper discovery, prioritization, and a clear roadmap, all inside a two-week sprint.",
-    name: "[Client name]",
-    role: "[Role, Company]",
-  },
-];
+/**
+ * Empty until real client testimonials are collected.
+ * The Testimonials component will not render the section while this is empty.
+ */
+export const testimonials: Testimonial[] = [];
 
 export const writing: WritingPost[] = [
   {
     type: "Essay",
-    date: "[Date]",
-    title: "[Add post title]",
-    excerpt: "[Replace with the post excerpt.]",
+    date: "April 2026",
+    title: "How I Ship 0→1 Products in Two Weeks",
+    excerpt:
+      "Speed isn't recklessness — it's discipline about scope. Across Dispatch, JFK Mensah Books, Eminence Lead, and Belleson Homes the same playbook held: a 24-hour discovery sprint, an 80/20 MVP cut, and an automation stack that replaces the team you don't have.",
     href: "#",
     footer: "Read on LinkedIn",
   },
   {
     type: "Framework",
-    date: "[Date]",
-    title: "[Add post title]",
-    excerpt: "[Replace with the post excerpt.]",
+    date: "March 2026",
+    title: "Make.com or Custom Backend? A Decision Framework",
+    excerpt:
+      "Make.com and n8n have replaced what used to take three weeks of custom backend work. They've also become a graveyard for products that should have been built properly. Here's the rubric I use to decide which is which — and the warning signs that say 'go custom now.'",
     href: "#",
     footer: "Read essay",
   },
   {
     type: "Teardown",
-    date: "[Date]",
-    title: "[Add post title]",
-    excerpt: "[Replace with the post excerpt.]",
+    date: "February 2026",
+    title: "PropTech in Emerging Markets: What Western Playbooks Miss",
+    excerpt:
+      "Filters and AI matching — the features Zillow ships don't translate to a market where the real friction is photography quality and agent response time. A breakdown of what actually moves the conversion needle in Accra, and why I cut most 'advanced' search features from Belleson.",
     href: "#",
-    footer: "Read on Substack",
+    footer: "Read on LinkedIn",
   },
   {
     type: "Field Guide",
-    date: "[Date]",
-    title: "[Add post title]",
-    excerpt: "[Replace with the post excerpt.]",
+    date: "January 2026",
+    title: "Discovery for One-Week Sprints: A Practical Checklist",
+    excerpt:
+      "When you have seven days from brief to live, traditional discovery cycles will kill you. The compressed version: six questions to the founder, four reference products to audit, and one priority cut that defines V1. The whole thing fits on a single page.",
     href: "#",
     footer: "Read field guide",
   },
@@ -417,21 +425,21 @@ export const writing: WritingPost[] = [
 
 export const status: StatusCard[] = [
   {
-    label: "Active Build",
-    title: "[Add current project]",
-    desc: "[Replace with description of an in-flight build, experiment, or rollout.]",
-    indicator: "In progress",
+    label: "Currently",
+    title: "Independent product work — Accra",
+    desc: "Shipping 0→1 web products and redesigns for selected clients in 1–2 week sprints. Booking limited engagements through 2026.",
+    indicator: "Available — May 2026",
   },
   {
     label: "Open to Work",
     title: "Senior PM · Global · Remote-First",
-    desc: "Exploring Senior or Lead PM roles at product-led companies. Bias toward marketplaces, fintech, and growth-stage startups.",
+    desc: "Exploring Senior or Lead PM roles at product-led companies. Bias toward marketplaces, fintech, EdTech, and growth-stage startups. Open to global relocation.",
     indicator: "Immediately available",
   },
   {
-    label: "Side Project",
-    title: "[Add side project]",
-    desc: "[Replace with current side project, resource, or community work.]",
-    indicator: "[Status]",
+    label: "In Progress",
+    title: "Agile Project Management — Coursera",
+    desc: "Working through the Agile PM specialization to formalize the cross-functional process I already use in client work. Targeting completion mid-2026.",
+    indicator: "On track",
   },
 ];

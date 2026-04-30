@@ -10,7 +10,7 @@ export default function Contact({ socials }: Props) {
   return (
     <section id="contact">
       <div className="container">
-        <SectionHeader num="08">
+        <SectionHeader num="07">
           Let&rsquo;s <em>connect</em>
         </SectionHeader>
         <div className="contact-layout">

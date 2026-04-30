@@ -6,7 +6,7 @@ export default function Writing({ posts }: { posts: WritingPost[] }) {
   return (
     <section id="writing">
       <div className="container">
-        <SectionHeader num="07">
+        <SectionHeader num="06">
           Writing &amp; <em>frameworks</em>
         </SectionHeader>
         <Reveal>
