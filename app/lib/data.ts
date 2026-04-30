@@ -25,7 +25,7 @@ export const profile: Profile = {
   availability: "Open to Junior PM roles · 2026",
   email: "ernestanyomitse752@gmail.com",
   currentlyAt: "Independent — shipping 0→1 products",
-  past: ["Aai Labs", "Dispatch", "JFK Mensah Books", "Eminence Lead", "Belleson Homes"],
+  past: ["Aai Labs", "LeadAfrique International"],
   heroStats: [
     { val: "5+", desc: "Products shipped" },
     { val: "1–2wk", desc: "Avg time-to-launch" },
@@ -48,7 +48,7 @@ export const profile: Profile = {
     {
       // TODO: replace with your real LinkedIn URL
       label: "LinkedIn",
-      href: "https://linkedin.com/in/ernestdelali",
+      href: "https://www.linkedin.com/in/ernest-delali-6934b8190/",
       handle: "linkedin.com/in/ernestdelali",
       meta: "LinkedIn",
     },
