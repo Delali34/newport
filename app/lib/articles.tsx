@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import type { ReactNode } from "react";
 
 /**
@@ -6,6 +7,8 @@ import type { ReactNode } from "react";
  * body from here.
  *
  * Each body is plain JSX. The wrapper page applies .prose typography.
+ * Apostrophes in prose are intentionally unescaped — they render fine and
+ * the lint rule is noise on long-form copy.
  */
 
 export const articles: Record<string, ReactNode> = {
