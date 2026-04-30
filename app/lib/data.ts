@@ -22,7 +22,7 @@ export const profile: Profile = {
   name: "Ernest Delali",
   role: "Product Manager",
   location: "Accra · Remote",
-  availability: "Open to Junior PM roles · 2026",
+  availability: "",
   email: "ernestanyomitse752@gmail.com",
   currentlyAt: "Independent — shipping 0→1 products",
   past: ["Aai Labs", "LeadAfrique International"],

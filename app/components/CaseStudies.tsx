@@ -48,8 +48,8 @@ export default function CaseStudies({ items }: { items: CaseStudy[] }) {
                   <div className="case-body" id={`case-${cs.id}-body`}>
                     <div className="case-body-inner">
                       <div className="case-body-content">
-                        {cs.cover && (
-                          <div className="case-cover">
+                        <div className="case-cover">
+                          {cs.cover ? (
                             <Image
                               src={cs.cover.src}
                               alt={cs.cover.alt}
@@ -57,8 +57,17 @@ export default function CaseStudies({ items }: { items: CaseStudy[] }) {
                               sizes="(max-width: 960px) 100vw, 1040px"
                               style={{ objectFit: "cover" }}
                             />
-                          </div>
-                        )}
+                          ) : (
+                            <div className="case-cover-placeholder">
+                              <span className="case-cover-placeholder-meta">
+                                Screenshot
+                              </span>
+                              <span className="case-cover-placeholder-title">
+                                {cs.title}
+                              </span>
+                            </div>
+                          )}
+                        </div>
 
                         {cs.liveUrl && (
                           <div className="case-actions">
