@@ -11,7 +11,7 @@ const inter = Inter({
 const SITE_TITLE = "Ernest Delali — Product Manager";
 const SITE_DESCRIPTION =
   "Product Manager focused on outcomes — 0→1 launches, retention, and growth loops. Selected work, writing, and current projects.";
-const SITE_OG_IMAGE = "/images/ernest-portrait.jpg";
+const SITE_OG_IMAGE = "/ernest-portrait.jpeg";
 
 export const metadata: Metadata = {
   title: SITE_TITLE,

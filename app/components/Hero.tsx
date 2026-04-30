@@ -17,8 +17,8 @@ export default function Hero({ profile }: { profile: Profile }) {
               not features.
             </h1>
             <p className="hero-sub">
-              Product Manager focused on 0→1 launches, retention, and growth loops — for
-              fintech, marketplaces, and mission-driven products.
+              Product Manager focused on 0→1 launches, retention, and growth
+              loops — for fintech, marketplaces, and mission-driven products.
             </p>
             <div className="hero-actions">
               <a href="#work" className="btn-primary">
@@ -48,7 +48,9 @@ export default function Hero({ profile }: { profile: Profile }) {
             )}
             <div className="id-card-row">
               <span className="id-card-row-label">Past</span>
-              <span className="id-card-row-value">{profile.past.join(" · ")}</span>
+              <span className="id-card-row-value">
+                {profile.past.join(" · ")}
+              </span>
             </div>
 
             <div className="id-card-stats">
@@ -62,7 +64,7 @@ export default function Hero({ profile }: { profile: Profile }) {
               </div>
               <div className="id-card-photo">
                 <Image
-                  src="/images/ernest-portrait.jpg"
+                  src="/ernest-portrait.jpeg"
                   alt={profile.name}
                   width={480}
                   height={600}
