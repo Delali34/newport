@@ -32,14 +32,25 @@ export type CaseBlockData = {
   text: string;
 };
 
+export type CaseImage = {
+  src: string;
+  alt: string;
+  width?: number;
+  height?: number;
+  caption?: string;
+};
+
 export type CaseStudy = {
   id: string;
   index: string;
   title: string;
   category: string;
   scope: string;
+  liveUrl?: string;
   preview: { val: string; label: string };
+  cover?: CaseImage;
   blocks: CaseBlockData[];
+  images?: CaseImage[];
   outcomes: { val: string; label: string }[];
 };
 

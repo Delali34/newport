@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import Reveal from "./Reveal";
 import SectionHeader from "./SectionHeader";
@@ -47,6 +48,32 @@ export default function CaseStudies({ items }: { items: CaseStudy[] }) {
                   <div className="case-body" id={`case-${cs.id}-body`}>
                     <div className="case-body-inner">
                       <div className="case-body-content">
+                        {cs.cover && (
+                          <div className="case-cover">
+                            <Image
+                              src={cs.cover.src}
+                              alt={cs.cover.alt}
+                              fill
+                              sizes="(max-width: 960px) 100vw, 1040px"
+                              style={{ objectFit: "cover" }}
+                            />
+                          </div>
+                        )}
+
+                        {cs.liveUrl && (
+                          <div className="case-actions">
+                            <a
+                              href={cs.liveUrl}
+                              className="case-live-link"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              Visit live site
+                              <span aria-hidden>↗</span>
+                            </a>
+                          </div>
+                        )}
+
                         <div className="case-grid">
                           {cs.blocks.map((block) => (
                             <div key={block.label}>
@@ -55,6 +82,30 @@ export default function CaseStudies({ items }: { items: CaseStudy[] }) {
                             </div>
                           ))}
                         </div>
+
+                        {cs.images && cs.images.length > 0 && (
+                          <div className="case-images">
+                            {cs.images.map((img) => (
+                              <figure key={img.src} className="case-image">
+                                <div className="case-image-frame">
+                                  <Image
+                                    src={img.src}
+                                    alt={img.alt}
+                                    fill
+                                    sizes="(max-width: 960px) 100vw, 33vw"
+                                    style={{ objectFit: "cover" }}
+                                  />
+                                </div>
+                                {img.caption && (
+                                  <figcaption className="case-image-caption">
+                                    {img.caption}
+                                  </figcaption>
+                                )}
+                              </figure>
+                            ))}
+                          </div>
+                        )}
+
                         <div className="case-outcomes">
                           {cs.outcomes.map((o) => (
                             <div key={o.label} className="case-outcome">

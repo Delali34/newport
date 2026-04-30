@@ -14,21 +14,24 @@ import type {
  * with an async fetcher (e.g. getProfile()) — components already accept
  * their data as props, so no other files need to change.
  *
- * Copy, names, metrics below are placeholder. Replace before launch.
+ * To add case study images:
+ *   1. Drop image files into /public/images/cases/<slug>/
+ *   2. Reference them on the matching case study via `cover` and `images`
+ *      (paths are relative to /public, e.g. "/images/cases/dispatch/cover.jpg").
  */
 
 export const profile: Profile = {
   name: "Ernest Delali",
   role: "Product Manager",
-  location: "Lagos · Remote",
+  location: "Accra · Remote",
   availability: "Open to PM roles · 2026",
   email: "ernest@example.com",
-  currentlyAt: "Building [stealth fintech]",
-  past: ["Dispatch", "Finbridge", "TechEdu"],
+  currentlyAt: "Independent — shipping 0→1 products",
+  past: ["Dispatch", "JFK Mensah Books", "Eminence Lead", "Belleson Homes"],
   heroStats: [
-    { val: "5+", desc: "Products shipped" },
-    { val: "40%", desc: "Avg retention lift" },
-    { val: "3", desc: "Industries served" },
+    { val: "4", desc: "Products shipped" },
+    { val: "1–2wk", desc: "Avg time-to-launch" },
+    { val: "4", desc: "Industries served" },
     { val: "0→1", desc: "Launch specialist" },
   ],
   socials: [
@@ -64,7 +67,7 @@ export const aboutCopy = {
     "I don't manage features. I manage outcomes — for users, for businesses, and for the teams building them.",
   body: [
     "My path to product wasn't linear. I started in engineering, moved into research, and found my edge sitting between user pain, technical feasibility, and business reality.",
-    "I can read a codebase, a user interview, and a P&L in the same week and synthesize them into a clear strategic call. I've shipped for fintech, logistics, EdTech, and social impact — each forced a different definition of what 'success' meant.",
+    "I ship fast — 1 to 2 weeks from brief to live — by combining tight discovery, modern automation tooling (Claude Code, n8n, Make.com), and clean API integration. I've shipped for logistics, e-commerce, social impact, and PropTech in Ghana and beyond.",
   ],
 };
 
@@ -77,7 +80,7 @@ export const competencies: CompetencyGroup[] = [
       "North Star Metrics",
       "JTBD",
       "MVP Strategy",
-      "Market Sizing",
+      "Growth Loops",
     ],
   },
   {
@@ -102,254 +105,250 @@ export const competencies: CompetencyGroup[] = [
     ],
   },
   {
-    label: "Technical",
-    items: ["API Design Review", "SQL", "Figma", "Looker", "Growth Loops"],
+    label: "Build & Automation",
+    items: [
+      "Claude Code",
+      "n8n",
+      "Make.com",
+      "API Integrations",
+      "SQL",
+      "Figma",
+    ],
   },
 ];
 
+/**
+ * Case studies. Each project links to a live deployment.
+ * Add cover/images by dropping files into /public/images/cases/<id>/
+ * and uncommenting the cover/images fields below.
+ *
+ * The text blocks are placeholders calibrated to each project — replace
+ * the bracketed sections with real numbers and details before launch.
+ */
 export const caseStudies: CaseStudy[] = [
   {
     id: "dispatch",
     index: "01",
-    title: "Dispatch — Last-Mile Logistics",
-    category: "Logistics · B2B",
-    scope: "0→1 · 8 weeks",
-    preview: { val: "−23pp", label: "Job abandonment" },
+    title: "Dispatch — Beat Platform",
+    category: "Media · B2C",
+    scope: "0→1 · 1 week",
+    liveUrl: "https://www.dispatchbeat.com/",
+    preview: { val: "1wk", label: "Brief to live" },
+    // cover: { src: "/images/cases/dispatch/cover.jpg", alt: "Dispatch homepage" },
     blocks: [
       {
         label: "Problem",
-        text: "Delivery partners abandoned jobs mid-route at 34%. Dispatch had no visibility into why — no tracking, no feedback loop, no analytics on drop-off behavior.",
+        text: "[Replace] The team needed a credible web presence to surface their content and convert readers into a recurring audience — without dragging timelines.",
       },
       {
         label: "Discovery",
-        text: "12 driver interviews surfaced unclear job specs, late payouts, and zero in-incident support. Mapped the driver journey and isolated 6 friction points.",
+        text: "[Replace] Audited similar publications, mapped the reader journey, and identified the smallest set of features needed to launch with confidence.",
       },
       {
         label: "MVP",
-        text: "RICE-prioritized to job clarity and payout visibility. Deferred route optimization. Shipped a job-card redesign and in-app dispute flow in a 6-week sprint.",
-      },
-      {
-        label: "Stakeholders",
-        text: "Aligned ops, engineering, and finance on a shared metrics dashboard so each team could watch the same job-completion signal in real time.",
+        text: "[Replace] Shipped a content-first homepage, article surfaces, and capture flow in a one-week sprint. Built on a stack tuned for speed of iteration.",
       },
       {
         label: "Result",
-        text: "Job abandonment fell 34% → 11% in 8 weeks. Driver NPS moved 22 → 61. Support ticket volume dropped 28%.",
+        text: "[Replace with real metrics — sessions, returning users, signups, etc.] Live within 7 days from brief.",
       },
       {
         label: "Learning",
-        text: "The product problem was a trust problem. Once drivers felt the system was fair, behavior changed faster than any UX tweak. Context > interface.",
+        text: "[Replace] Constraints (1 week, lean budget) forced ruthless prioritization. Anything that didn't directly serve a reader's first session got cut.",
       },
     ],
+    // images: [{ src: "/images/cases/dispatch/screen-1.jpg", alt: "..." }],
     outcomes: [
-      { val: "−23pp", label: "Job abandonment" },
-      { val: "+39pt", label: "Driver NPS" },
-      { val: "−28%", label: "Support tickets" },
-      { val: "6wk", label: "Time to first ship" },
+      { val: "1wk", label: "Time to launch" },
+      { val: "Live", label: "dispatchbeat.com" },
     ],
   },
   {
-    id: "finance",
+    id: "jfk-mensah-books",
     index: "02",
-    title: "Finbridge — Personal Banking",
-    category: "Fintech · B2C",
-    scope: "Retention · Onboarding",
-    preview: { val: "+21pp", label: "D30 retention" },
+    title: "JFK Mensah Books — Online Bookstore",
+    category: "E-commerce · B2C",
+    scope: "0→1 · 2 weeks",
+    liveUrl: "https://www.jfkmensahbooks.com/",
+    preview: { val: "2wk", label: "Brief to live" },
+    // cover: { src: "/images/cases/jfk-mensah-books/cover.jpg", alt: "JFK Mensah Books storefront" },
     blocks: [
       {
         label: "Problem",
-        text: "Day-30 retention was at 31% — users activated but didn't return. Acceptable for a neobank in beta, fatal long-term.",
+        text: "[Replace] The author needed a direct-to-reader sales channel without depending on third-party retailers — full ownership of brand, pricing, and customer relationship.",
       },
       {
         label: "Discovery",
-        text: "Cohort analysis showed power users shared one trait: they set a savings goal in their first session. Skippers churned at 3× the rate.",
+        text: "[Replace] Mapped the reader journey from discovery to delivery. Reviewed peer author sites and self-publishing playbooks to size the right scope for V1.",
       },
       {
         label: "MVP",
-        text: "Redesigned onboarding around a 'First Win' principle — required one meaningful action (goal, transfer, or bill) before reaching home. A/B tested three variants.",
+        text: "[Replace] Shipped storefront, catalog, payment integration, and order management in two weeks. Used API integrations + automation (n8n / Make.com) to keep ops lean.",
       },
       {
         label: "Result",
-        text: "D30 retention improved 31% → 52%. Goal-setting variant won. The First-Win pattern was added to the platform's permanent activation playbook.",
-      },
-      {
-        label: "Metrics",
-        text: "Defined the North Star as Weekly Active Savers — users taking at least one intentional savings action per week. Realigned team OKRs around it.",
+        text: "[Replace with real numbers — orders, revenue, conversion rate, AOV.] Live and accepting orders.",
       },
       {
         label: "Learning",
-        text: "The product wasn't broken. The contract with the user was. No first-session commitment = no habit. Behavioral design > feature design.",
+        text: "[Replace] For low-volume publishing, automation matters more than features. The right Make.com flows replaced what would have been three weeks of custom backend.",
       },
     ],
+    // images: [],
     outcomes: [
-      { val: "+21pp", label: "D30 retention" },
-      { val: "52%", label: "D30 reached" },
-      { val: "3×", label: "Churn improvement" },
+      { val: "2wk", label: "Time to launch" },
+      { val: "Live", label: "jfkmensahbooks.com" },
     ],
   },
   {
-    id: "portal",
+    id: "eminence-lead",
     index: "03",
-    title: "TechEdu — Student Portal",
-    category: "EdTech · B2C",
-    scope: "Redesign · IA",
-    preview: { val: "−58%", label: "Support call volume" },
+    title: "Eminence Lead — NGO Platform Redesign",
+    category: "Social Impact · NGO",
+    scope: "Redesign · 2 weeks",
+    liveUrl: "https://www.eminencelead.org/",
+    preview: { val: "2wk", label: "Redesign shipped" },
+    // cover: { src: "/images/cases/eminence-lead/cover.jpg", alt: "Eminence Lead site" },
     blocks: [
       {
         label: "Problem",
-        text: "Students missed deadlines, couldn't find materials, and called admin for self-serve tasks. 62% called support for basic actions.",
+        text: "[Replace] The existing site didn't reflect the org's credibility or convert visitors into participants, donors, or volunteers. Information was hard to find.",
       },
       {
         label: "Discovery",
-        text: "Contextual inquiry with 30 students across 3 faculties. The information architecture mirrored admin departments, not student mental models — classic org-chart-as-UX.",
+        text: "[Replace] Audited the previous site, mapped donor / participant flows, and identified the calls-to-action that mattered most for the org's mission funnel.",
       },
       {
         label: "MVP",
-        text: "Rebuilt navigation around the student lifecycle (Apply → Enroll → Attend → Graduate). MoSCoW shipped registration and results in V1; deferred financial aid to V2.",
-      },
-      {
-        label: "Stakeholders",
-        text: "IT, registrar, and academic affairs had overlapping data ownership. Facilitated 4 alignment sessions and built a RACI matrix to unblock the build.",
+        text: "[Replace] Restructured information architecture around the visitor's journey. Rebuilt the homepage, programs, and contact paths in two weeks.",
       },
       {
         label: "Result",
-        text: "Support calls dropped 58%. Registration task completion went 43% → 91%. Student satisfaction jumped 24 points.",
+        text: "[Replace with real numbers — donations, signups, time-on-page, bounce rate.] Live redesign deployed.",
       },
       {
         label: "Learning",
-        text: "Institutional products fail because they mirror internal org structure. The PM's job was to break that mirror.",
+        text: "[Replace] Mission-driven sites convert on trust and clarity, not features. Removing options often increases conversion.",
       },
     ],
+    // images: [],
     outcomes: [
-      { val: "−58%", label: "Support calls" },
-      { val: "+48pp", label: "Task completion" },
-      { val: "+24pt", label: "Satisfaction" },
+      { val: "2wk", label: "Redesign shipped" },
+      { val: "Live", label: "eminencelead.org" },
     ],
   },
   {
-    id: "ngo",
+    id: "belleson-homes",
     index: "04",
-    title: "NGO Platform — Donations Engine",
-    category: "Social Impact · 0→1",
-    scope: "0→1 · 10 weeks",
-    preview: { val: "4×", label: "Quarterly fundraising" },
+    title: "Belleson Homes — Property Sales",
+    category: "PropTech · Marketplace",
+    scope: "0→1 · 2 weeks",
+    liveUrl: "https://bellesonhomes.com/",
+    preview: { val: "2wk", label: "Brief to live" },
+    // cover: { src: "/images/cases/belleson-homes/cover.jpg", alt: "Belleson Homes listings" },
     blocks: [
       {
         label: "Problem",
-        text: "Campaigns ran manually over WhatsApp. No tracking, no recurring giving, no donor visibility. Estimated completion < 20%.",
+        text: "[Replace] Buyers in Ghana lacked a clean digital experience for browsing properties. Existing portals were cluttered, slow, and made shortlisting painful.",
       },
       {
         label: "Discovery",
-        text: "Surveyed 45 donors. Top blockers: distrust of manual flow, no visibility into fund allocation, and no easy recurring option.",
+        text: "[Replace] Reviewed competitor portals (local + global), mapped the buyer journey, and isolated the highest-leverage interactions: search, listing detail, agent contact.",
       },
       {
         label: "MVP",
-        text: "Campaign pages with impact tracking, one-click recurring donations, and transparent fund allocation. Shipped in 10 weeks.",
+        text: "[Replace] Shipped listings, search/filter, listing detail, and lead-capture flow in two weeks. API integrations connected listing data and notifications.",
       },
       {
         label: "Result",
-        text: "Donation completion reached 67%. Recurring donors grew to 31% of base. Fundraising rose 4× in one quarter.",
-      },
-      {
-        label: "Growth",
-        text: "Built a referral mechanic into the thank-you flow. Each donor was prompted to share their campaign. Added 23% incremental reach with zero paid spend.",
+        text: "[Replace with real numbers — listings live, leads generated, time on listing pages.] Live and accepting buyer enquiries.",
       },
       {
         label: "Learning",
-        text: "For mission-driven products, trust is the conversion lever. Showing impact triggered repeat behavior more than any incentive.",
+        text: "[Replace] PropTech in Ghana wins on photography, clarity of price, and speed of agent response — not on advanced search. Most filters were noise.",
       },
     ],
+    // images: [],
     outcomes: [
-      { val: "67%", label: "Completion rate" },
-      { val: "4×", label: "Quarterly fundraising" },
-      { val: "+23%", label: "Referral reach" },
-    ],
-  },
-  {
-    id: "jobs",
-    index: "05",
-    title: "Job Portal — Two-Sided Matching",
-    category: "Marketplace",
-    scope: "Liquidity · Loops",
-    preview: { val: "7.4×", label: "Apps per job" },
-    blocks: [
-      {
-        label: "Problem",
-        text: "Two-sided marketplace with poor liquidity. Employers posted but got few applications; candidates browsed but rarely applied. Median: 1.8 apps/job.",
-      },
-      {
-        label: "Discovery",
-        text: "JTBD applied to both sides separately. Employers' real job: shortlist quickly. Candidates' real job: know if they'd actually get the role.",
-      },
-      {
-        label: "MVP",
-        text: "Match-score indicator for candidates (% match). Employer 'shortlist score' algorithm. North Star: time-to-shortlist.",
-      },
-      {
-        label: "Result",
-        text: "Apps per job rose 1.8 → 7.4. Employer shortlist time fell 44%. Candidate application rate up 3.2×.",
-      },
-      {
-        label: "Loops",
-        text: "Solved chicken-and-egg by leading with employer quality-of-hire signal. Better hires attracted better candidates, attracting more employers.",
-      },
-      {
-        label: "Learning",
-        text: "Matching products fail when they optimize one side. Confidence signals for candidates matter as much as shortlisting tools for employers.",
-      },
-    ],
-    outcomes: [
-      { val: "7.4×", label: "Apps per job" },
-      { val: "−44%", label: "Shortlist time" },
-      { val: "3.2×", label: "App rate" },
+      { val: "2wk", label: "Time to launch" },
+      { val: "Live", label: "bellesonhomes.com" },
     ],
   },
 ];
 
 export const metrics: MetricCell[] = [
-  { val: "+21pp", desc: "Day-30 retention on fintech platform", project: "Finbridge" },
-  { val: "−58%", desc: "Reduction in support call volume", project: "TechEdu" },
-  { val: "−23pp", desc: "Job abandonment for delivery partners", project: "Dispatch" },
-  { val: "4×", desc: "Quarterly donation fundraising growth", project: "NGO Platform" },
-  { val: "3.2×", desc: "Candidate application rate uplift", project: "Job Portal" },
-  { val: "+39pt", desc: "Driver NPS improvement", project: "Dispatch" },
-  { val: "67%", desc: "Donation completion rate (from < 20%)", project: "NGO Platform" },
-  { val: "6wk", desc: "Average time-to-first-ship across 0→1", project: "All Projects" },
+  {
+    val: "1wk",
+    desc: "Brief-to-live for the Dispatch Beat platform",
+    project: "Dispatch",
+  },
+  {
+    val: "2wk",
+    desc: "Brief-to-live for the JFK Mensah online bookstore",
+    project: "JFK Mensah Books",
+  },
+  {
+    val: "2wk",
+    desc: "Full redesign and deploy of the Eminence Lead NGO platform",
+    project: "Eminence Lead",
+  },
+  {
+    val: "2wk",
+    desc: "Brief-to-live for the Belleson Homes property platform",
+    project: "Belleson Homes",
+  },
+  {
+    val: "4",
+    desc: "Industries served — media, e-commerce, social impact, PropTech",
+    project: "All Projects",
+  },
+  {
+    val: "100%",
+    desc: "Projects shipped to production and currently live",
+    project: "All Projects",
+  },
+  {
+    val: "API",
+    desc: "Custom integrations across payment, content, and ops layers",
+    project: "All Projects",
+  },
+  {
+    val: "0→1",
+    desc: "Three of four projects launched from scratch in two weeks or less",
+    project: "All Projects",
+  },
 ];
 
 export const metricsIntro =
-  "Products without numbers are hypotheses. Here's what shipped work actually moved.";
+  "Products without numbers are hypotheses. Replace these with real metrics from each launch.";
 
 export const resume: Resume = {
   experience: [
     {
-      title: "Senior Product Manager",
-      date: "2023 — Present",
-      org: "Dispatch Logistics — Lagos, Nigeria",
-      desc: "Led end-to-end PM function across driver and merchant surfaces. Reduced job abandonment by 23pp. Introduced data-driven roadmap process.",
+      title: "Independent Product Manager",
+      date: "2024 — Present",
+      org: "Accra, Ghana — Remote",
+      desc: "Ship 0→1 products and redesigns for Ghanaian and global clients. Recent: Dispatch, JFK Mensah Books, Eminence Lead, Belleson Homes — all shipped in 1–2 weeks using Claude Code, n8n, Make.com, and modern API integrations.",
     },
     {
-      title: "Product Manager",
-      date: "2021 — 2023",
-      org: "Finbridge — Remote",
-      desc: "Owned activation and retention for personal banking app. Onboarding redesign moved D30 retention 31% → 52%. Built experimentation culture from zero.",
-    },
-    {
-      title: "Associate Product Manager",
-      date: "2019 — 2021",
-      org: "TechEdu — Accra, Ghana",
-      desc: "Rebuilt the university student portal. Cut support call volume 58% and lifted task completion 43% → 91% post-launch.",
+      title: "[Add prior role]",
+      date: "[Year — Year]",
+      org: "[Add company / location]",
+      desc: "[Replace with real description of prior role and impact.]",
     },
   ],
   education: [
     {
-      title: "BSc. Computer Science",
-      date: "2015 — 2019",
-      org: "University of Ghana, Legon",
+      title: "[Add degree]",
+      date: "[Year — Year]",
+      org: "[Add institution]",
     },
   ],
   skills: [
-    "Product School — CPM",
+    "Claude Code",
+    "n8n",
+    "Make.com",
+    "API Integrations",
     "Mixpanel",
     "Amplitude",
     "Google Analytics",
@@ -363,58 +362,54 @@ export const resume: Resume = {
 export const testimonials: Testimonial[] = [
   {
     quote:
-      "Ernest didn't just run discovery — he changed how our whole team thinks about user problems. He brought rigor to a process we thought was already working.",
-    name: "Yemi Adeyemi",
-    role: "Co-founder & CEO, Dispatch",
+      "[Replace] Ernest didn't just build a site — he reframed how we thought about the launch. The two-week timeline felt impossible until it didn't.",
+    name: "[Client name]",
+    role: "[Role, Company]",
   },
   {
     quote:
-      "In six weeks he went from zero context to a launched MVP with real user data. The rare PM who understands both what to build and how to get it built.",
-    name: "Ama Sarpong",
-    role: "Head of Engineering, Finbridge",
+      "[Replace] He moved faster than any agency we'd worked with, and the result was sharper. The automation he set up still saves us hours every week.",
+    name: "[Client name]",
+    role: "[Role, Company]",
   },
   {
     quote:
-      "The retention numbers speak for themselves. What really impressed me was how he kept our team aligned during a stretch of real technical constraints.",
-    name: "Kojo Mensah",
-    role: "Founder, TechEdu Ghana",
+      "[Replace] What surprised me was the rigor — proper discovery, prioritization, and a clear roadmap, all inside a two-week sprint.",
+    name: "[Client name]",
+    role: "[Role, Company]",
   },
 ];
 
 export const writing: WritingPost[] = [
   {
     type: "Essay",
-    date: "March 2026",
-    title: "The PM Skill Nobody Talks About: Knowing When Not to Build",
-    excerpt:
-      "The most valuable decision I made last quarter was killing a feature three weeks into development. Here's the framework I used — and why it was the right call.",
+    date: "[Date]",
+    title: "[Add post title]",
+    excerpt: "[Replace with the post excerpt.]",
     href: "#",
     footer: "Read on LinkedIn",
   },
   {
     type: "Framework",
-    date: "February 2026",
-    title: "How I Use North Star Metrics to Align Entire Teams",
-    excerpt:
-      "A North Star Metric only works if every function — from engineering to finance — can trace daily work back to it. Most teams skip that step.",
+    date: "[Date]",
+    title: "[Add post title]",
+    excerpt: "[Replace with the post excerpt.]",
     href: "#",
     footer: "Read essay",
   },
   {
     type: "Teardown",
-    date: "January 2026",
-    title: "What African Startups Get Wrong About Product-Market Fit",
-    excerpt:
-      "PMF in markets with infrastructure gaps and trust deficits looks fundamentally different from Silicon Valley playbooks. A framework that fits the context.",
+    date: "[Date]",
+    title: "[Add post title]",
+    excerpt: "[Replace with the post excerpt.]",
     href: "#",
     footer: "Read on Substack",
   },
   {
     type: "Field Guide",
-    date: "December 2025",
-    title: "Jobs to Be Done: A Practical Field Guide",
-    excerpt:
-      "How I run JTBD interviews, synthesize hiring jobs, and translate them into product requirements that engineering teams actually find useful.",
+    date: "[Date]",
+    title: "[Add post title]",
+    excerpt: "[Replace with the post excerpt.]",
     href: "#",
     footer: "Read field guide",
   },
@@ -422,10 +417,10 @@ export const writing: WritingPost[] = [
 
 export const status: StatusCard[] = [
   {
-    label: "Active Experiment",
-    title: "Community-Led Onboarding for B2B SaaS",
-    desc: "Testing whether peer cohorts reduce time-to-value more effectively than in-app product tours. 200-user beta, 6-week run.",
-    indicator: "Week 3 of 6",
+    label: "Active Build",
+    title: "[Add current project]",
+    desc: "[Replace with description of an in-flight build, experiment, or rollout.]",
+    indicator: "In progress",
   },
   {
     label: "Open to Work",
@@ -435,8 +430,8 @@ export const status: StatusCard[] = [
   },
   {
     label: "Side Project",
-    title: "PM Interview Prep for Africa",
-    desc: "A structured guide calibrated to the PM hiring process at top global and African tech companies — the resource I wish I'd had.",
-    indicator: "Early access · April 2026",
+    title: "[Add side project]",
+    desc: "[Replace with current side project, resource, or community work.]",
+    indicator: "[Status]",
   },
 ];
