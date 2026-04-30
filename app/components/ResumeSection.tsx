@@ -42,17 +42,6 @@ export default function ResumeSection({ profile, resume }: Props) {
                   </span>
                 ))}
               </div>
-
-              <div className="resume-section-title">Education</div>
-              {resume.education.map((item) => (
-                <div key={item.org + item.date} className="resume-item">
-                  <div className="resume-item-header">
-                    <span className="resume-item-title">{item.title}</span>
-                    <span className="resume-item-date">{item.date}</span>
-                  </div>
-                  <div className="resume-item-org">{item.org}</div>
-                </div>
-              ))}
             </div>
           </Reveal>
 
