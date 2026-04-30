@@ -28,9 +28,7 @@ export const profile: Profile = {
   past: ["Aai Labs", "LeadAfrique International"],
   heroStats: [
     { val: "5+", desc: "Products taken from brief to production" },
-    { val: "100%", desc: "Signup growth on Aai Labs EdTech" },
     { val: "50%", desc: "Client referral rate" },
-    { val: "1–2wk", desc: "Brief-to-live cadence" },
   ],
   socials: [
     {

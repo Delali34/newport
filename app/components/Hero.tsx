@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Profile } from "../lib/types";
 
 export default function Hero({ profile }: { profile: Profile }) {
@@ -51,12 +52,23 @@ export default function Hero({ profile }: { profile: Profile }) {
             </div>
 
             <div className="id-card-stats">
-              {profile.heroStats.map((s) => (
-                <div key={s.desc}>
-                  <div className="id-card-stat-val">{s.val}</div>
-                  <div className="id-card-stat-desc">{s.desc}</div>
-                </div>
-              ))}
+              <div className="id-card-stats-col">
+                {profile.heroStats.map((s) => (
+                  <div key={s.desc}>
+                    <div className="id-card-stat-val">{s.val}</div>
+                    <div className="id-card-stat-desc">{s.desc}</div>
+                  </div>
+                ))}
+              </div>
+              <div className="id-card-photo">
+                <Image
+                  src="/images/ernest-portrait.jpg"
+                  alt={profile.name}
+                  width={480}
+                  height={600}
+                  priority
+                />
+              </div>
             </div>
           </aside>
         </div>
