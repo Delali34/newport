@@ -22,7 +22,7 @@ export const profile: Profile = {
   name: "Ernest Delali",
   role: "Product Manager",
   location: "Accra · Remote",
-  availability: "Open to PM roles · 2026",
+  availability: "Open to Junior PM roles · 2026",
   email: "ernestanyomitse752@gmail.com",
   currentlyAt: "Independent — shipping 0→1 products",
   past: ["Aai Labs", "Dispatch", "JFK Mensah Books", "Eminence Lead", "Belleson Homes"],
@@ -386,40 +386,44 @@ export const testimonials: Testimonial[] = [];
 
 export const writing: WritingPost[] = [
   {
+    slug: "ship-0-to-1-in-two-weeks",
     type: "Essay",
     date: "April 2026",
     title: "How I Ship 0→1 Products in Two Weeks",
     excerpt:
       "Speed isn't recklessness — it's discipline about scope. Across Dispatch, JFK Mensah Books, Eminence Lead, and Belleson Homes the same playbook held: a 24-hour discovery sprint, an 80/20 MVP cut, and an automation stack that replaces the team you don't have.",
-    href: "#",
-    footer: "Read on LinkedIn",
+    footer: "Read essay",
+    readTime: "8 min read",
   },
   {
+    slug: "make-com-or-custom-backend",
     type: "Framework",
     date: "March 2026",
     title: "Make.com or Custom Backend? A Decision Framework",
     excerpt:
       "Make.com and n8n have replaced what used to take three weeks of custom backend work. They've also become a graveyard for products that should have been built properly. Here's the rubric I use to decide which is which — and the warning signs that say 'go custom now.'",
-    href: "#",
-    footer: "Read essay",
+    footer: "Read framework",
+    readTime: "7 min read",
   },
   {
+    slug: "proptech-emerging-markets",
     type: "Teardown",
     date: "February 2026",
     title: "PropTech in Emerging Markets: What Western Playbooks Miss",
     excerpt:
       "Filters and AI matching — the features Zillow ships don't translate to a market where the real friction is photography quality and agent response time. A breakdown of what actually moves the conversion needle in Accra, and why I cut most 'advanced' search features from Belleson.",
-    href: "#",
-    footer: "Read on LinkedIn",
+    footer: "Read teardown",
+    readTime: "9 min read",
   },
   {
+    slug: "discovery-one-week-sprints",
     type: "Field Guide",
     date: "January 2026",
     title: "Discovery for One-Week Sprints: A Practical Checklist",
     excerpt:
       "When you have seven days from brief to live, traditional discovery cycles will kill you. The compressed version: six questions to the founder, four reference products to audit, and one priority cut that defines V1. The whole thing fits on a single page.",
-    href: "#",
     footer: "Read field guide",
+    readTime: "6 min read",
   },
 ];
 
@@ -432,8 +436,8 @@ export const status: StatusCard[] = [
   },
   {
     label: "Open to Work",
-    title: "Senior PM · Global · Remote-First",
-    desc: "Exploring Senior or Lead PM roles at product-led companies. Bias toward marketplaces, fintech, EdTech, and growth-stage startups. Open to global relocation.",
+    title: "Junior PM · Global · Remote-First",
+    desc: "Exploring Junior or Associate PM roles at product-led companies. Bias toward marketplaces, fintech, EdTech, and growth-stage startups. Open to global relocation.",
     indicator: "Immediately available",
   },
   {

@@ -80,12 +80,15 @@ export type Testimonial = {
 };
 
 export type WritingPost = {
+  slug: string;
   type: string;
   date: string;
   title: string;
   excerpt: string;
-  href: string;
+  /** External URL when published off-site. Internal article pages are rendered from /writing/[slug]. */
+  href?: string;
   footer: string;
+  readTime: string;
 };
 
 export type StatusCard = {

@@ -64,7 +64,12 @@ export default function ResumeSection({ profile, resume }: Props) {
                   PDF version with detailed role descriptions, full metrics, and references on
                   request.
                 </div>
-                <a href="#" className="btn-primary" style={{ width: "100%", justifyContent: "center" }}>
+                <a
+                  href="/Ernest_Delali_Resume.pdf"
+                  download
+                  className="btn-primary"
+                  style={{ width: "100%", justifyContent: "center" }}
+                >
                   Download PDF →
                 </a>
               </div>
@@ -85,8 +90,8 @@ export default function ResumeSection({ profile, resume }: Props) {
               <div className="resume-action resume-seeking">
                 <div className="resume-action-title">Currently seeking</div>
                 <div className="resume-seeking-text">
-                  Senior or Lead PM roles at <strong>product-led startups</strong>, Series A–C or
-                  scale-ups. Remote-first preferred. Open to global relocation.
+                  Junior or Associate PM roles at <strong>product-led startups</strong>, Series
+                  A–C or scale-ups. Remote-first preferred. Open to global relocation.
                 </div>
               </div>
             </div>
