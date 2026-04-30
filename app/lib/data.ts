@@ -27,10 +27,10 @@ export const profile: Profile = {
   currentlyAt: "Independent — shipping 0→1 products",
   past: ["Aai Labs", "LeadAfrique International"],
   heroStats: [
-    { val: "5+", desc: "Products shipped" },
-    { val: "1–2wk", desc: "Avg time-to-launch" },
-    { val: "100%", desc: "Live in production" },
-    { val: "0→1", desc: "Launch specialist" },
+    { val: "5+", desc: "Products taken from brief to production" },
+    { val: "100%", desc: "Signup growth on Aai Labs EdTech" },
+    { val: "50%", desc: "Client referral rate" },
+    { val: "1–2wk", desc: "Brief-to-live cadence" },
   ],
   socials: [
     {
@@ -190,7 +190,7 @@ export const caseStudies: CaseStudy[] = [
       },
     ],
     outcomes: [
-      { val: "2wk", label: "Time to launch" },
+      { val: "<24hr", label: "First online order" },
       { val: "Live", label: "jfkmensahbooks.com" },
       { val: "Automated", label: "Post-purchase ops" },
     ],
@@ -271,26 +271,6 @@ export const caseStudies: CaseStudy[] = [
 
 export const metrics: MetricCell[] = [
   {
-    val: "1wk",
-    desc: "Brief-to-live for the Dispatch Beat platform",
-    project: "Dispatch",
-  },
-  {
-    val: "2wk",
-    desc: "Brief-to-live for the JFK Mensah online bookstore",
-    project: "JFK Mensah Books",
-  },
-  {
-    val: "2wk",
-    desc: "Full redesign and deploy of the Eminence Lead NGO platform",
-    project: "Eminence Lead",
-  },
-  {
-    val: "2wk",
-    desc: "Brief-to-live for the Belleson Homes property platform",
-    project: "Belleson Homes",
-  },
-  {
     val: "100%",
     desc: "User signups and engagement growth on Aai Labs EdTech platform",
     project: "Aai Labs",
@@ -308,6 +288,16 @@ export const metrics: MetricCell[] = [
   {
     val: "100%",
     desc: "Search visibility uplift from SEO work on shipped sites",
+    project: "Independent",
+  },
+  {
+    val: "<24hr",
+    desc: "First online order after launch on JFK Mensah Books",
+    project: "JFK Mensah Books",
+  },
+  {
+    val: "1–2wk",
+    desc: "Brief-to-live cadence across four shipped 0→1 launches",
     project: "Independent",
   },
 ];

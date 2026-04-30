@@ -35,6 +35,10 @@ export default function Hero({ profile }: { profile: Profile }) {
               {profile.role} · {profile.location}
             </div>
 
+            <div className="id-card-row id-card-row-open">
+              <span className="id-card-row-label">Open to</span>
+              <span className="id-card-row-value">Junior PM roles · 2026</span>
+            </div>
             {profile.currentlyAt && (
               <div className="id-card-row">
                 <span className="id-card-row-label">Currently</span>

@@ -929,6 +929,28 @@ section:first-of-type {
   border-radius: 999px;
   font-weight: 500;
 }
+.resume-education-line {
+  font-size: 13px;
+  color: var(--gray-700);
+  line-height: 1.7;
+  margin-top: 4px;
+}
+.resume-education-org {
+  color: var(--black);
+  font-weight: 500;
+}
+.resume-education-meta {
+  color: var(--gray-600);
+}
+.resume-education-sep {
+  color: var(--gray-400);
+}
+.id-card-row-open .id-card-row-label {
+  color: var(--black);
+}
+.id-card-row-open .id-card-row-value {
+  font-weight: 600;
+}
 .resume-sidebar {
   position: sticky;
   top: 88px;
