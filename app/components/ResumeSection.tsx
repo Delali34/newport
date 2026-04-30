@@ -34,6 +34,15 @@ export default function ResumeSection({ profile, resume }: Props) {
                 </div>
               ))}
 
+              <div className="resume-section-title">Tools &amp; certifications</div>
+              <div className="resume-skills">
+                {resume.skills.map((s) => (
+                  <span key={s} className="resume-skill">
+                    {s}
+                  </span>
+                ))}
+              </div>
+
               <div className="resume-section-title">Education</div>
               {resume.education.map((item) => (
                 <div key={item.org + item.date} className="resume-item">
@@ -44,15 +53,6 @@ export default function ResumeSection({ profile, resume }: Props) {
                   <div className="resume-item-org">{item.org}</div>
                 </div>
               ))}
-
-              <div className="resume-section-title">Tools &amp; certifications</div>
-              <div className="resume-skills">
-                {resume.skills.map((s) => (
-                  <span key={s} className="resume-skill">
-                    {s}
-                  </span>
-                ))}
-              </div>
             </div>
           </Reveal>
 

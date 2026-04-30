@@ -329,18 +329,6 @@ export const resume: Resume = {
       org: "Self-employed — Accra",
       desc: "Ship 0→1 web products and redesigns for clients across media, e-commerce, social impact, and PropTech. Recent: Dispatch, JFK Mensah Books, Eminence Lead, Belleson Homes — all live in 1–2 weeks. 50% client referral rate. SEO work raised search visibility 100% and traffic 50% on shipped sites.",
     },
-    {
-      title: "Front-End Developer",
-      date: "Mar 2023 — Dec 2023",
-      org: "LeadAfrique International — Ghana",
-      desc: "Led the redesign of the organization's website, lifting user engagement 50%. Translated stakeholder requirements into technical specs, created digital content for leadership programs (50% lift in social engagement), and monitored site performance to guide improvements.",
-    },
-    {
-      title: "Intern",
-      date: "Nov 2021 — Mar 2023",
-      org: "LeadAfrique International — Ghana",
-      desc: "Supported development of educational program materials (90% supervisor satisfaction), coordinated leadership programs and logistics, and created internal documentation and training content.",
-    },
   ],
   education: [
     {
